@@ -1,7 +1,7 @@
 component "boost" do |pkg, settings, platform|
   # Source-Related Metadata
-  pkg.version "1.58.0"
-  pkg.md5sum "5a5d5614d9a07672e1ab2a250b5defc5"
+  pkg.version "1.67.0"
+  pkg.md5sum "4850fceb3f2222ee011d4f3ea304d2cb"
 
   if platform.architecture =~ /arm/
     pkg.version "1.61.0"

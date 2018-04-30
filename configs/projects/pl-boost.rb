@@ -4,11 +4,11 @@ project "pl-boost" do |proj|
 
   proj.description "Puppet Labs boost"
   if platform.architecture =~ /arm/
-    proj.version "1.61.0"
+    proj.version "1.67.0"
     proj.release "0"
   else
-    proj.version "1.58.0"
-    proj.release "7"
+    proj.version "1.67.0"
+    proj.release "0"
   end
   proj.license "Boost and MIT and Python"
   proj.vendor "Puppet Labs <info@puppetlabs.com>"
