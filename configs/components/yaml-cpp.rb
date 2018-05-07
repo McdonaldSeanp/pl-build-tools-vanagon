@@ -4,10 +4,10 @@ component "yaml-cpp" do |pkg, settings, platform|
     pkg.version "0.5.3"
     pkg.md5sum "9a60a3051c2ef01980c78a2d6be40ed9"
   else
-    pkg.version "0.5.1"
-    pkg.md5sum "0fa47a5ed8fedefab766592785c85ee7"
+    pkg.version "0.6.2"
+    pkg.md5sum "5b943e9af0060d0811148b037449ef82"
   end
-  pkg.url "#{settings[:buildsources_url]}/#{pkg.get_name}-#{pkg.get_version}.tar.gz"
+  pkg.url "https://github.com/jbeder/yaml-cpp/archive/yaml-cpp-0.6.2.tar.gz"
 
   # Package Dependency Metadata
 
@@ -41,7 +41,7 @@ component "yaml-cpp" do |pkg, settings, platform|
     pkg.build_requires "pl-gcc"
     pkg.build_requires "make"
     pkg.build_requires "pl-cmake"
-    pkg.build_requires "pl-boost"
+    # pkg.build_requires "http://builds.puppetlabs.lan/pl-build-tools/1eaedcc41076007109ebd1d5340f4785a9789017/artifacts/el/7/x86_64/pl-boost-1.67.0-0.el7.x86_64.rpm"
   end
 
   # Build-time Configuration
@@ -72,7 +72,8 @@ component "yaml-cpp" do |pkg, settings, platform|
 
   # Build Commands
   pkg.build do
-    [ "rm -rf build-shared",
+    [ "cp -r ../yaml-cpp-yaml-cpp-#{pkg.get_version}/* .",
+      "rm -rf build-shared",
       "mkdir build-shared",
       "cd build-shared",
       "#{special_path ? special_path : ''} \
